@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Header } from '@/components/Header';
+
 // --- ELEGANT SRI LANKAN BACKGROUND COMPONENT ---
 const SriLankanBackground = () => {
   return (
@@ -33,6 +34,7 @@ const SriLankanBackground = () => {
     </div>
   );
 };
+
 // --- BEAUTIFUL SRI LANKAN ICON COMPONENTS ---
 // Beautiful Detailed Lotus Flower Icon
 const LotusIcon = (props: React.SVGProps<SVGSVGElement>) => (
@@ -112,32 +114,13 @@ const InfoIcon = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-const MenuIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <line x1="3" y1="6" x2="21" y2="6"/>
-    <line x1="3" y1="12" x2="21" y2="12"/>
-    <line x1="3" y1="18" x2="21" y2="18"/>
-  </svg>
-);
-
-const CloseIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <line x1="18" y1="6" x2="6" y2="18"/>
-    <line x1="6" y1="6" x2="18" y2="18"/>
-  </svg>
-);
-
 const CheckIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg {...props} xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <polyline points="20 6 9 17 4 12"/>
   </svg>
 );
 
-// Duplicate LotusIcon removed - using the one defined above
-
-// Header component imported from components/Header.tsx
-
-// --- STUNNING HERO SECTION ---
+// --- MOBILE-OPTIMIZED HERO SECTION ---
 const Hero = () => {
   const [searchText, setSearchText] = useState('');
 
@@ -175,63 +158,63 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative h-screen flex items-start justify-center overflow-hidden pt-2 sm:pt-3 md:pt-4">
-      <div className="container mx-auto px-4 sm:px-6 py-0 relative z-10">
+    <section className="relative min-h-[60vh] sm:min-h-[75vh] lg:min-h-[85vh] flex items-center justify-center overflow-hidden pt-2 pb-4 sm:pb-8">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
           {/* Compact Hero Content */}
-          <div className="mb-2 sm:mb-3 animate-fade-in-up">
-            <div className="flex flex-col items-center mb-2">
-              <div className="relative mb-1">
-                <LotusIcon className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28" />
+          <div className="mb-4 sm:mb-6 lg:mb-8 animate-fade-in-up">
+            <div className="flex flex-col items-center mb-3 sm:mb-4 lg:mb-6">
+              <div className="relative mb-2 sm:mb-3 lg:mb-4">
+                <LotusIcon className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24" />
               </div>
             </div>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-3 sm:mb-4">
-              <span className="block text-foreground mb-1">Simplifying Government</span>
+            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight mb-3 sm:mb-4 lg:mb-6">
+              <span className="block text-foreground mb-1 sm:mb-2">Simplifying Government</span>
               <span className="block text-gradient animate-title-wave">for Every Sri Lankan</span>
             </h1>
-            <div className="w-16 sm:w-20 md:w-24 h-0.5 bg-gradient-to-r from-[#FFC72C] via-[#FF5722] to-[#8D153A] mx-auto rounded-full shadow-lg"></div>
+            <div className="w-12 sm:w-16 md:w-20 lg:w-24 h-0.5 bg-gradient-to-r from-[#FFC72C] via-[#FF5722] to-[#8D153A] mx-auto rounded-full shadow-lg"></div>
           </div>
           
           {/* Compact Subtitle */}
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground mb-4 sm:mb-6 max-w-3xl mx-auto leading-relaxed animate-fade-in-up font-light px-4 sm:px-0" style={{animationDelay: '0.2s'}}>
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-4 sm:mb-6 lg:mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in-up font-light px-4 sm:px-0" style={{animationDelay: '0.2s'}}>
             Ask questions, find services, and access government information instantly.<br className="hidden sm:block" />
             <span className="text-foreground/80 font-medium">Your direct link to public services in Sri Lanka.</span>
           </p>
           
           {/* Compact Search Interface */}
           <div className="max-w-3xl mx-auto animate-fade-in-up px-4 sm:px-0" style={{animationDelay: '0.4s'}}>
-            <form action="/chat" method="GET" className="relative group mb-4">
+            <form action="/chat" method="GET" className="relative group mb-4 sm:mb-6">
               <div className="relative bg-card/90 dark:bg-card/95 backdrop-blur-md border-2 border-border/50 hover:border-[#FFC72C]/70 rounded-xl p-1.5 transition-all duration-500 hover:shadow-2xl shadow-lg modern-card">
                 <textarea
                   name="q"
                   value={searchText}
                   onChange={(e) => setSearchText(e.target.value)}
                   onKeyDown={handleKeyDown}
-                  className="w-full bg-transparent text-foreground placeholder-muted-foreground p-4 pr-16 rounded-lg resize-none focus:outline-none text-base sm:text-lg leading-relaxed border-none font-medium"
+                  className="w-full bg-transparent text-foreground placeholder-muted-foreground p-3 sm:p-4 pr-14 sm:pr-16 rounded-lg resize-none focus:outline-none text-sm sm:text-base lg:text-lg leading-relaxed border-none font-medium"
                   placeholder={placeholderTexts[currentPlaceholder]}
                   rows={1}
                   onInput={(e) => {
                     const target = e.target as HTMLTextAreaElement;
                     target.style.height = 'auto';
-                    target.style.height = `${Math.max(target.scrollHeight, 50)}px`;
+                    target.style.height = `${Math.max(target.scrollHeight, 45)}px`;
                   }}
                 />
                 <button 
                   type="submit" 
-                  className="absolute right-3 top-1/2 -translate-y-1/2 p-3 bg-gradient-to-r from-[#FFC72C] via-[#FF5722] to-[#8D153A] hover:from-[#FF5722] hover:via-[#8D153A] hover:to-[#FFC72C] rounded-lg transition-all duration-300 hover:scale-110 shadow-xl group hover:shadow-2xl"
+                  className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 p-2.5 sm:p-3 bg-gradient-to-r from-[#FFC72C] via-[#FF5722] to-[#8D153A] hover:from-[#FF5722] hover:via-[#8D153A] hover:to-[#FFC72C] rounded-lg transition-all duration-300 hover:scale-110 shadow-xl group hover:shadow-2xl"
                 >
-                  <ArrowRightIcon className="h-4 w-4 text-white group-hover:translate-x-1 transition-transform duration-300" />
+                  <ArrowRightIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-white group-hover:translate-x-1 transition-transform duration-300" />
                 </button>
               </div>
               
               {/* Compact Suggestions */}
-              <div className="mt-4 flex flex-wrap gap-2 justify-center">
+              <div className="mt-3 sm:mt-4 flex flex-wrap gap-1.5 sm:gap-2 justify-center">
                 {["🛂 Passport Renewal", "🏢 Business Registration", "💍 Marriage Certificate", "🚗 Driving License"].map((suggestion, index) => (
                   <button
                     key={index}
                     type="button"
                     onClick={() => setSearchText(suggestion.split(' ').slice(1).join(' '))}
-                    className="px-4 py-2 bg-card/80 hover:bg-accent/80 border border-border/50 hover:border-[#FFC72C]/60 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 hover:scale-105 shadow-md hover:shadow-lg backdrop-blur-sm modern-card"
+                    className="px-3 py-1.5 sm:px-4 sm:py-2 bg-card/80 hover:bg-accent/80 border border-border/50 hover:border-[#FFC72C]/60 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 hover:scale-105 shadow-md hover:shadow-lg backdrop-blur-sm modern-card"
                   >
                     {suggestion}
                   </button>
@@ -240,16 +223,16 @@ const Hero = () => {
             </form>
             
             {/* Compact Trust Indicators */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 mt-3 animate-fade-in-up" style={{animationDelay: '0.6s'}}>
-              <div className="flex items-center gap-2 text-muted-foreground text-xs">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2 lg:gap-4 animate-fade-in-up" style={{animationDelay: '0.6s'}}>
+              <div className="flex items-center gap-1.5 sm:gap-2 text-muted-foreground text-xs">
                 <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></div>
                 <span>Trusted by 50K+ Citizens</span>
               </div>
-              <div className="flex items-center gap-2 text-muted-foreground text-xs">
+              <div className="flex items-center gap-1.5 sm:gap-2 text-muted-foreground text-xs">
                 <div className="w-1.5 h-1.5 bg-blue-500 rounded-full animate-pulse"></div>
                 <span>24/7 Available</span>
               </div>
-              <div className="flex items-center gap-2 text-muted-foreground text-xs">
+              <div className="flex items-center gap-1.5 sm:gap-2 text-muted-foreground text-xs">
                 <div className="w-1.5 h-1.5 bg-orange-500 rounded-full animate-pulse"></div>
                 <span>Government Endorsed</span>
               </div>
@@ -257,12 +240,11 @@ const Hero = () => {
           </div>
         </div>
       </div>
-
     </section>
   );
 };
 
-// --- PREMIUM FEATURES SECTION ---
+// --- MOBILE-OPTIMIZED FEATURES SECTION ---
 const Features = () => {
   const featuresList = [
     { 
@@ -289,15 +271,15 @@ const Features = () => {
   ];
   
   return (
-    <section id="services" className="py-12 sm:py-16 relative">
+    <section id="services" className="py-4 sm:py-8 lg:py-12 -mt-4 sm:-mt-8 lg:mt-0 relative">
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         {/* Compact Section Header */}
-        <div className="text-center mb-8 sm:mb-12 animate-fade-in-up">
-          <div className="inline-flex items-center gap-2 bg-card/90 dark:bg-card/95 backdrop-blur-md px-4 py-2 rounded-full border border-border/50 mb-4 modern-card">
+        <div className="text-center mb-6 sm:mb-8 lg:mb-10 animate-fade-in-up">
+          <div className="inline-flex items-center gap-2 bg-card/90 dark:bg-card/95 backdrop-blur-md px-4 py-2 rounded-full border border-border/50 mb-3 sm:mb-4 modern-card">
             <LotusIcon className="w-4 h-4" />
             <span className="text-xs sm:text-sm font-medium text-foreground">Our Services</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 leading-tight">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-2 sm:mb-3 lg:mb-4 leading-tight">
             <span className="block text-foreground mb-1">Everything You Need,</span>
             <span className="block text-gradient">All in One Place</span>
           </h2>
@@ -305,46 +287,59 @@ const Features = () => {
             GovLink is designed to make your interaction with government services seamless and efficient.
           </p>
         </div>        
-        {/* Enhanced Feature Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+        
+        {/* Enhanced Feature Cards with Fixed Alignment */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 lg:gap-6">
           {featuresList.map((feature, index) => (
             <div 
               key={index} 
-              className="group relative bg-card/90 dark:bg-card/95 backdrop-blur-md p-6 sm:p-8 rounded-xl border border-border/50 hover:border-[#FFC72C]/70 hover:shadow-2xl transition-all duration-500 animate-fade-in-up modern-card hover-lift"
+              className="group relative bg-card/90 dark:bg-card/95 backdrop-blur-md rounded-xl border border-border/50 hover:border-[#FFC72C]/70 hover:shadow-2xl transition-all duration-500 animate-fade-in-up modern-card hover-lift flex flex-col h-full"
               style={{animationDelay: `${index * 0.15}s`}}
             >
-              {/* Enhanced Icon Container */}
-              <div className="relative flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-xl mb-4 sm:mb-6 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6"
-                   style={{
-                     background: `linear-gradient(135deg, ${feature.color}20, ${feature.color}10)`,
-                     border: `2px solid ${feature.color}30`
-                   }}>
-                <div className="text-2xl sm:text-3xl transition-transform duration-300 group-hover:scale-110" style={{color: feature.color}}>
-                  {feature.icon}
-                </div>
-                <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                     style={{background: `radial-gradient(circle, ${feature.color}15, transparent 70%)`}}>
-                </div>
-              </div>
-
-              {/* Content */}
-              <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 group-hover:text-[#FFC72C] transition-colors duration-300">
-                {feature.title}
-              </h3>
-              <p className="text-muted-foreground mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
-                {feature.description}
-              </p>
-
-              {/* Enhanced Benefits */}
-              <div className="space-y-2 sm:space-y-3">
-                {feature.benefits.map((benefit, benefitIndex) => (
-                  <div key={benefitIndex} className="flex items-center gap-3 text-xs sm:text-sm group/benefit hover:translate-x-1 transition-transform duration-200">
-                    <div className="w-6 h-6 rounded-full bg-gradient-to-r from-[#FFC72C] to-[#FF5722] flex items-center justify-center text-white text-xs font-bold shadow-md">
-                      ✓
-                    </div>
-                    <span className="text-muted-foreground group-hover/benefit:text-foreground transition-colors duration-200">{benefit}</span>
+              {/* Card Content Container */}
+              <div className="p-4 sm:p-6 lg:p-8 flex flex-col h-full">
+                {/* Enhanced Icon Container */}
+                <div className="relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-xl mb-3 sm:mb-4 lg:mb-6 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6"
+                     style={{
+                       background: `linear-gradient(135deg, ${feature.color}20, ${feature.color}10)`,
+                       border: `2px solid ${feature.color}30`
+                     }}>
+                  <div className="text-xl sm:text-2xl lg:text-3xl transition-transform duration-300 group-hover:scale-110" style={{color: feature.color}}>
+                    {feature.icon}
                   </div>
-                ))}
+                  <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                       style={{background: `radial-gradient(circle, ${feature.color}15, transparent 70%)`}}>
+                  </div>
+                </div>
+
+                {/* Content - Fixed height containers */}
+                <div className="flex-1 flex flex-col">
+                  {/* Title - Fixed height */}
+                  <div className="h-12 sm:h-14 lg:h-16 flex items-start">
+                    <h3 className="text-base sm:text-lg lg:text-xl font-bold group-hover:text-[#FFC72C] transition-colors duration-300 leading-tight">
+                      {feature.title}
+                    </h3>
+                  </div>
+
+                  {/* Description - Fixed height */}
+                  <div className="h-10 sm:h-12 lg:h-16 flex items-start mb-3 sm:mb-4 lg:mb-6">
+                    <p className="text-muted-foreground leading-relaxed text-xs sm:text-sm lg:text-base">
+                      {feature.description}
+                    </p>
+                  </div>
+
+                  {/* Enhanced Benefits - Takes remaining space */}
+                  <div className="space-y-1.5 sm:space-y-2 lg:space-y-3 mt-auto">
+                    {feature.benefits.map((benefit, benefitIndex) => (
+                      <div key={benefitIndex} className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm group/benefit hover:translate-x-1 transition-transform duration-200">
+                        <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-gradient-to-r from-[#FFC72C] to-[#FF5722] flex items-center justify-center text-white text-xs font-bold shadow-md flex-shrink-0">
+                          ✓
+                        </div>
+                        <span className="text-muted-foreground group-hover/benefit:text-foreground transition-colors duration-200">{benefit}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
               
               {/* Hover Gradient Overlay */}
@@ -359,7 +354,7 @@ const Features = () => {
   );
 };
 
-// --- ABOUT SECTION ---
+// --- BALANCED ABOUT SECTION ---
 const About = () => (
   <section id="about" className="py-16 sm:py-20 relative">
     <div className="container mx-auto px-4 sm:px-6 relative z-10">
@@ -371,95 +366,122 @@ const About = () => (
         </div>
       </div>
       
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-        {/* Streamlined Left Content */}
-        <div className="animate-fade-in-up">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+        {/* Enhanced Left Content with Better Vertical Distribution */}
+        <div className="animate-fade-in-up flex flex-col justify-between min-h-[600px] lg:min-h-[700px]">
+          {/* Top Section */}
+          <div>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 lg:mb-8 leading-tight">
+              <span className="block text-foreground">Bridging the Gap Between</span>
+              <span className="block text-gradient">Citizens & Government</span>
+            </h2>
+            
+            <p className="text-base sm:text-lg text-muted-foreground mb-8 lg:mb-12 leading-relaxed">
+              Making government services accessible, transparent, and efficient for every Sri Lankan citizen. 
+              Our platform revolutionizes how citizens interact with government departments, eliminating 
+              bureaucratic hurdles and streamlining essential processes.
+            </p>
+          </div>
           
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 leading-tight">
-            <span className="block text-foreground">Bridging the Gap Between</span>
-            <span className="block text-gradient">Citizens & Government</span>
-          </h2>
-          
-          <p className="text-base sm:text-lg text-muted-foreground mb-6 leading-relaxed">
-            Making government services accessible, transparent, and efficient for every Sri Lankan citizen.
-          </p>
-          
-          <div className="space-y-4 mb-6">
-            <div className="flex items-center gap-3">
-              <div className="w-5 h-5 bg-gradient-to-r from-[#FFC72C] to-[#FF5722] rounded-full flex items-center justify-center flex-shrink-0">
-                <CheckIcon className="w-3 h-3 text-white" />
+          {/* Middle Section - Features */}
+          <div className="space-y-6 lg:space-y-8 mb-8 lg:mb-12">
+            <div className="flex items-start gap-4">
+              <div className="w-6 h-6 bg-gradient-to-r from-[#FFC72C] to-[#FF5722] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <CheckIcon className="w-4 h-4 text-white" />
               </div>
               <div>
-                <span className="font-semibold text-sm">Simplified Access</span>
-                <p className="text-muted-foreground text-sm">One platform for all services</p>
+                <span className="font-semibold text-base lg:text-lg block mb-2">Simplified Access</span>
+                <p className="text-muted-foreground text-sm lg:text-base leading-relaxed">
+                  One unified platform for all government services. No more visiting multiple departments 
+                  or websites. Everything you need is accessible from a single dashboard.
+                </p>
               </div>
             </div>
             
-            <div className="flex items-center gap-3">
-              <div className="w-5 h-5 bg-gradient-to-r from-[#008060] to-[#FFC72C] rounded-full flex items-center justify-center flex-shrink-0">
-                <CheckIcon className="w-3 h-3 text-white" />
+            <div className="flex items-start gap-4">
+              <div className="w-6 h-6 bg-gradient-to-r from-[#008060] to-[#FFC72C] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <CheckIcon className="w-4 h-4 text-white" />
               </div>
               <div>
-                <span className="font-semibold text-sm">24/7 Availability</span>
-                <p className="text-muted-foreground text-sm">Access anytime, anywhere</p>
+                <span className="font-semibold text-base lg:text-lg block mb-2">24/7 Availability</span>
+                <p className="text-muted-foreground text-sm lg:text-base leading-relaxed">
+                  Access government services anytime, anywhere. Our digital platform never closes, 
+                  ensuring you can complete tasks at your convenience, even outside office hours.
+                </p>
               </div>
             </div>
             
-            <div className="flex items-center gap-3">
-              <div className="w-5 h-5 bg-gradient-to-r from-[#FF5722] to-[#8D153A] rounded-full flex items-center justify-center flex-shrink-0">
-                <CheckIcon className="w-3 h-3 text-white" />
+            <div className="flex items-start gap-4">
+              <div className="w-6 h-6 bg-gradient-to-r from-[#FF5722] to-[#8D153A] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <CheckIcon className="w-4 h-4 text-white" />
               </div>
               <div>
-                <span className="font-semibold text-sm">Transparent Process</span>
-                <p className="text-muted-foreground text-sm">Clear step-by-step guidance</p>
+                <span className="font-semibold text-base lg:text-lg block mb-2">Transparent Process</span>
+                <p className="text-muted-foreground text-sm lg:text-base leading-relaxed">
+                  Clear step-by-step guidance with real-time tracking. Know exactly what documents 
+                  you need, how long processes take, and track your application status every step of the way.
+                </p>
               </div>
             </div>
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-3">
-            <button className="bg-gradient-to-r from-[#FFC72C] via-[#FF5722] to-[#8D153A] hover:from-[#FF5722] hover:via-[#8D153A] hover:to-[#FFC72C] text-white px-5 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300 hover:scale-105 shadow-lg">
-              Learn More
+          {/* Bottom Section - Action Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4">
+            <button className="bg-gradient-to-r from-[#FFC72C] via-[#FF5722] to-[#8D153A] hover:from-[#FF5722] hover:via-[#8D153A] hover:to-[#FFC72C] text-white px-6 py-3.5 rounded-xl font-semibold text-sm lg:text-base transition-all duration-300 hover:scale-105 shadow-lg">
+              Learn More About Us
             </button>
-            <button className="border-2 border-[#008060] text-[#008060] hover:bg-[#008060] hover:text-white px-5 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300 hover:scale-105">
-              Our Mission
+            <button className="border-2 border-[#008060] text-[#008060] hover:bg-[#008060] hover:text-white px-6 py-3.5 rounded-xl font-semibold text-sm lg:text-base transition-all duration-300 hover:scale-105">
+              Our Mission & Vision
             </button>
           </div>
         </div>
         
-        {/* Enhanced Right Side with Image and Stats */}
-        <div className="animate-fade-in-up space-y-0" style={{animationDelay: '0.2s'}}>
-          {/* Hero Image */}
-          <img 
-            src="/4.png" 
-            alt="GovLink Support Team" 
-            className="w-full h-auto opacity-100 dark:opacity-60 max-w-md mx-auto lg:max-w-full block"
-            style={{
-              filter: 'saturate(1.1) brightness(1.05)',
-              marginBottom: '0px'
-            }}
-          />
+        {/* Enhanced Right Side with Better Proportions */}
+        <div className="animate-fade-in-up flex flex-col min-h-[600px] lg:min-h-[700px]" style={{animationDelay: '0.2s'}}>
+          {/* Hero Image - Increased height for balance */}
+          <div className="mb-8 lg:mb-10 flex-1 flex items-center justify-center">
+            <img 
+              src="/4.png" 
+              alt="GovLink Support Team" 
+              className="w-full h-auto opacity-100 dark:opacity-60 max-w-md mx-auto lg:max-w-full block rounded-xl shadow-lg"
+              style={{
+                filter: 'saturate(1.1) brightness(1.05)',
+                maxHeight: '400px',
+                objectFit: 'contain'
+              }}
+            />
+          </div>
           
-          {/* Horizontal Stats Row */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-3" style={{marginTop: '0px'}}>
-            <div className="text-center p-2 bg-card/90 dark:bg-card/95 backdrop-blur-md rounded-lg border border-border/50 modern-card">
-              <div className="text-lg font-bold text-gradient mb-0.5">50K+</div>
-              <div className="text-muted-foreground text-xs leading-tight">Citizens Served</div>
+          {/* Stats Grid with Better Spacing */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+            <div className="text-center p-4 lg:p-6 bg-card/90 dark:bg-card/95 backdrop-blur-md rounded-xl border border-border/50 modern-card hover:shadow-lg transition-all duration-300 flex flex-col justify-center min-h-[100px] lg:min-h-[120px]">
+              <div className="text-xl lg:text-2xl font-bold text-gradient mb-2">50K+</div>
+              <div className="text-muted-foreground text-xs lg:text-sm leading-tight">Citizens Served</div>
             </div>
             
-            <div className="text-center p-2 bg-card/90 dark:bg-card/95 backdrop-blur-md rounded-lg border border-border/50 modern-card">
-              <div className="text-lg font-bold text-gradient mb-0.5">200+</div>
-              <div className="text-muted-foreground text-xs leading-tight">Government Forms</div>
+            <div className="text-center p-4 lg:p-6 bg-card/90 dark:bg-card/95 backdrop-blur-md rounded-xl border border-border/50 modern-card hover:shadow-lg transition-all duration-300 flex flex-col justify-center min-h-[100px] lg:min-h-[120px]">
+              <div className="text-xl lg:text-2xl font-bold text-gradient mb-2">200+</div>
+              <div className="text-muted-foreground text-xs lg:text-sm leading-tight">Government Forms</div>
             </div>
             
-            <div className="text-center p-2 bg-card/90 dark:bg-card/95 backdrop-blur-md rounded-lg border border-border/50 modern-card">
-              <div className="text-lg font-bold text-gradient mb-0.5">25</div>
-              <div className="text-muted-foreground text-xs leading-tight">Departments</div>
+            <div className="text-center p-4 lg:p-6 bg-card/90 dark:bg-card/95 backdrop-blur-md rounded-xl border border-border/50 modern-card hover:shadow-lg transition-all duration-300 flex flex-col justify-center min-h-[100px] lg:min-h-[120px]">
+              <div className="text-xl lg:text-2xl font-bold text-gradient mb-2">25</div>
+              <div className="text-muted-foreground text-xs lg:text-sm leading-tight">Departments</div>
             </div>
             
-            <div className="text-center p-2 bg-card/90 dark:bg-card/95 backdrop-blur-md rounded-lg border border-border/50 modern-card">
-              <div className="text-lg font-bold text-gradient mb-0.5">99.8%</div>
-              <div className="text-muted-foreground text-xs leading-tight">Uptime</div>
+            <div className="text-center p-4 lg:p-6 bg-card/90 dark:bg-card/95 backdrop-blur-md rounded-xl border border-border/50 modern-card hover:shadow-lg transition-all duration-300 flex flex-col justify-center min-h-[100px] lg:min-h-[120px]">
+              <div className="text-xl lg:text-2xl font-bold text-gradient mb-2">99.8%</div>
+              <div className="text-muted-foreground text-xs lg:text-sm leading-tight">Uptime</div>
             </div>
+          </div>
+          
+          {/* Additional Info Section for Balance */}
+          <div className="mt-8 lg:mt-10 p-4 lg:p-6 bg-gradient-to-r from-primary/5 via-accent/5 to-secondary/5 rounded-xl border border-border/30">
+            <h4 className="font-semibold text-base lg:text-lg text-foreground mb-2">Trusted by Government</h4>
+            <p className="text-muted-foreground text-sm lg:text-base leading-relaxed">
+              Officially endorsed by the Ministry of Public Administration and recognized 
+              as the primary digital gateway for citizen services in Sri Lanka.
+            </p>
           </div>
         </div>
       </div>
@@ -611,11 +633,22 @@ const Contact = () => (
   </section>
 );
 
-// --- ENHANCED PREMIUM FOOTER ---
+// --- ENHANCED PREMIUM FOOTER WITH ADAPTIVE BACKGROUND ---
 const Footer = () => (
   <footer className="relative py-16 sm:py-20 mt-20">
-    <div className="absolute inset-0 bg-gradient-to-t from-[#FFC72C]/8 via-[#FF5722]/4 to-transparent dark:from-[#8D153A]/12 dark:via-[#FF5722]/6 dark:to-transparent"></div>
-    <div className="absolute inset-0 bg-gradient-to-br from-[#008060]/8 via-transparent to-[#FFC72C]/6 dark:from-[#008060]/5 dark:via-transparent dark:to-[#FFC72C]/4"></div>
+    {/* Adaptive Background Layers */}
+    <div className="absolute inset-0">
+      {/* Base gradient - subtle and theme-aware */}
+      <div className="absolute inset-0 bg-gradient-to-t from-muted/20 via-muted/10 to-transparent"></div>
+      
+      {/* Secondary gradient for depth */}
+      <div className="absolute inset-0 bg-gradient-to-br from-accent/15 via-transparent to-accent/10"></div>
+      
+      {/* Subtle accent dots - only visible on hover areas */}
+      <div className="absolute top-1/4 right-1/4 w-32 h-32 bg-primary/5 dark:bg-primary/3 rounded-full blur-3xl opacity-50"></div>
+      <div className="absolute bottom-1/4 left-1/4 w-40 h-40 bg-secondary/10 dark:bg-secondary/5 rounded-full blur-3xl opacity-40"></div>
+    </div>
+    
     <div className="container mx-auto px-4 sm:px-6 relative z-10">
       {/* Main Footer Content */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12 mb-12">
@@ -624,7 +657,7 @@ const Footer = () => (
           <div className="flex items-center space-x-4 mb-6">
             <div className="relative">
               <LotusIcon className="w-14 h-14 sm:w-16 sm:h-16 transition-transform duration-300 hover:scale-110" />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#FFC72C]/20 to-[#FF5722]/20 rounded-full blur-xl animate-pulse" style={{animationDuration: '4s'}}></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-accent/10 rounded-full blur-xl animate-pulse opacity-50" style={{animationDuration: '4s'}}></div>
             </div>
             <div>
               <h3 className="text-2xl sm:text-3xl font-bold text-gradient mb-1">GovLink</h3>
@@ -661,15 +694,15 @@ const Footer = () => (
           
           {/* Quick Stats */}
           <div className="grid grid-cols-3 gap-4">
-            <div className="text-center p-3 bg-card/50 dark:bg-card/30 rounded-lg border border-border/30">
+            <div className="text-center p-3 bg-card/60 dark:bg-card/40 rounded-lg border border-border/30 backdrop-blur-sm">
               <div className="text-lg font-bold text-gradient">50K+</div>
               <div className="text-xs text-muted-foreground">Users</div>
             </div>
-            <div className="text-center p-3 bg-card/50 dark:bg-card/30 rounded-lg border border-border/30">
+            <div className="text-center p-3 bg-card/60 dark:bg-card/40 rounded-lg border border-border/30 backdrop-blur-sm">
               <div className="text-lg font-bold text-gradient">99.8%</div>
               <div className="text-xs text-muted-foreground">Uptime</div>
             </div>
-            <div className="text-center p-3 bg-card/50 dark:bg-card/30 rounded-lg border border-border/30">
+            <div className="text-center p-3 bg-card/60 dark:bg-card/40 rounded-lg border border-border/30 backdrop-blur-sm">
               <div className="text-lg font-bold text-gradient">24/7</div>
               <div className="text-xs text-muted-foreground">Support</div>
             </div>
@@ -679,23 +712,23 @@ const Footer = () => (
         {/* Enhanced Quick Links */}
         <div>
           <h4 className="font-semibold mb-4 text-foreground flex items-center gap-2">
-            <div className="w-1 h-4 bg-gradient-to-b from-[#FFC72C] to-[#FF5722] rounded-full"></div>
+            <div className="w-1 h-4 bg-gradient-to-b from-primary to-accent rounded-full"></div>
             Quick Links
           </h4>
           <div className="space-y-2">
-            <a href="#services" className="group flex items-center gap-2 text-muted-foreground hover:text-[#FFC72C] transition-all duration-300 text-sm py-1">
+            <a href="#services" className="group flex items-center gap-2 text-muted-foreground hover:text-primary transition-all duration-300 text-sm py-1">
               <div className="w-1.5 h-1.5 bg-current rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <span>🛡️ Services</span>
             </a>
-            <a href="#about" className="group flex items-center gap-2 text-muted-foreground hover:text-[#008060] transition-all duration-300 text-sm py-1">
+            <a href="#about" className="group flex items-center gap-2 text-muted-foreground hover:text-primary transition-all duration-300 text-sm py-1">
               <div className="w-1.5 h-1.5 bg-current rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <span>🏛️ About Us</span>
             </a>
-            <a href="#contact" className="group flex items-center gap-2 text-muted-foreground hover:text-[#FF5722] transition-all duration-300 text-sm py-1">
+            <a href="#contact" className="group flex items-center gap-2 text-muted-foreground hover:text-primary transition-all duration-300 text-sm py-1">
               <div className="w-1.5 h-1.5 bg-current rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <span>📞 Contact</span>
             </a>
-            <a href="#" className="group flex items-center gap-2 text-muted-foreground hover:text-[#8D153A] transition-all duration-300 text-sm py-1">
+            <a href="#" className="group flex items-center gap-2 text-muted-foreground hover:text-primary transition-all duration-300 text-sm py-1">
               <div className="w-1.5 h-1.5 bg-current rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <span>❓ Help Center</span>
             </a>
@@ -705,23 +738,23 @@ const Footer = () => (
         {/* Enhanced Legal Links */}
         <div>
           <h4 className="font-semibold mb-4 text-foreground flex items-center gap-2">
-            <div className="w-1 h-4 bg-gradient-to-b from-[#008060] to-[#FFC72C] rounded-full"></div>
+            <div className="w-1 h-4 bg-gradient-to-b from-accent to-secondary rounded-full"></div>
             Legal & Policy
           </h4>
           <div className="space-y-2">
-            <a href="#" className="group flex items-center gap-2 text-muted-foreground hover:text-[#FFC72C] transition-all duration-300 text-sm py-1">
+            <a href="#" className="group flex items-center gap-2 text-muted-foreground hover:text-primary transition-all duration-300 text-sm py-1">
               <div className="w-1.5 h-1.5 bg-current rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <span>🔒 Privacy Policy</span>
             </a>
-            <a href="#" className="group flex items-center gap-2 text-muted-foreground hover:text-[#008060] transition-all duration-300 text-sm py-1">
+            <a href="#" className="group flex items-center gap-2 text-muted-foreground hover:text-primary transition-all duration-300 text-sm py-1">
               <div className="w-1.5 h-1.5 bg-current rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <span>📋 Terms of Service</span>
             </a>
-            <a href="#" className="group flex items-center gap-2 text-muted-foreground hover:text-[#FF5722] transition-all duration-300 text-sm py-1">
+            <a href="#" className="group flex items-center gap-2 text-muted-foreground hover:text-primary transition-all duration-300 text-sm py-1">
               <div className="w-1.5 h-1.5 bg-current rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <span>🍪 Cookie Policy</span>
             </a>
-            <a href="#" className="group flex items-center gap-2 text-muted-foreground hover:text-[#8D153A] transition-all duration-300 text-sm py-1">
+            <a href="#" className="group flex items-center gap-2 text-muted-foreground hover:text-primary transition-all duration-300 text-sm py-1">
               <div className="w-1.5 h-1.5 bg-current rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <span>♿ Accessibility</span>
             </a>

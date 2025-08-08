@@ -872,9 +872,9 @@ const Features = ({ language }: { language: Language }) => {
               style={{animationDelay: `${index * 0.15}s`}}
             >
               {/* Card Content Container */}
-              <div className="p-4 sm:p-6 lg:p-8 flex flex-col h-full min-h-[350px] sm:min-h-[400px] lg:min-h-[450px]">
+              <div className="p-3 sm:p-6 lg:p-8 flex flex-col h-full min-h-[280px] sm:min-h-[400px] lg:min-h-[450px]">
                 {/* Enhanced Icon Container */}
-                <div className="relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-xl mb-3 sm:mb-4 lg:mb-6 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6"
+                <div className="relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-xl mb-2 sm:mb-4 lg:mb-6 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6"
                      style={{
                        background: `linear-gradient(135deg, ${feature.color}20, ${feature.color}10)`,
                        border: `2px solid ${feature.color}30`
@@ -890,15 +890,15 @@ const Features = ({ language }: { language: Language }) => {
                 {/* Content - Flexible height containers */}
                 <div className="flex-1 flex flex-col">
                   {/* Title - Flexible height */}
-                  <div className="mb-3 sm:mb-4">
-                    <h3 className="text-base sm:text-lg lg:text-xl font-bold group-hover:text-[#FFC72C] transition-colors duration-300 leading-tight min-h-[3rem] sm:min-h-[3.5rem] flex items-start break-words hyphens-auto">
+                  <div className="mb-2 sm:mb-4">
+                    <h3 className="text-base sm:text-lg lg:text-xl font-bold group-hover:text-[#FFC72C] transition-colors duration-300 leading-tight min-h-[2.5rem] sm:min-h-[3.5rem] flex items-start break-words hyphens-auto">
                       {feature.title}
                     </h3>
                   </div>
 
                   {/* Description - Flexible height */}
-                  <div className="mb-4 sm:mb-6 flex-1">
-                    <p className="text-muted-foreground leading-relaxed text-xs sm:text-sm lg:text-base min-h-[4rem] sm:min-h-[5rem] break-words hyphens-auto">
+                  <div className="mb-3 sm:mb-6 flex-1">
+                    <p className="text-muted-foreground leading-relaxed text-xs sm:text-sm lg:text-base min-h-[3rem] sm:min-h-[5rem] break-words hyphens-auto">
                       {feature.description}
                     </p>
                   </div>

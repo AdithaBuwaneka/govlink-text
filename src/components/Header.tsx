@@ -67,39 +67,47 @@ export const Header = () => {
 
   return (
     <>
-      <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur-sm border-b border-border/50">
-        <nav className="container mx-auto flex items-center justify-between p-2 md:p-3">
-          <Link href="/" className="flex items-center space-x-3">
-            <div className="w-8 h-8 bg-gradient-to-br from-background/50 to-card/50 rounded-lg p-0.5 flex items-center justify-center border border-border/20 relative overflow-visible">
-              <NavbarLotusIcon className="w-10 h-10 absolute" />
+      <header className="sticky top-0 z-50 w-full bg-background/98 dark:bg-card backdrop-blur-md border-b border-border/30 dark:border-border/50 shadow-sm dark:shadow-lg">
+        <nav className="container mx-auto flex items-center justify-between px-4 py-3 md:px-6 md:py-4">
+          <Link href="/" className="flex items-center space-x-3 group">
+            <div className="w-9 h-9 bg-gradient-to-br from-[#FFC72C]/10 to-[#FF5722]/10 rounded-xl p-0.5 flex items-center justify-center border border-[#FFC72C]/20 relative overflow-visible backdrop-blur-sm transition-all duration-300 group-hover:shadow-lg group-hover:scale-105">
+              <NavbarLotusIcon className="w-11 h-11 absolute transition-transform duration-300 group-hover:rotate-12" />
             </div>
-            <span className="text-xl font-bold text-gradient">GovLink</span>
+            <div className="flex flex-col">
+              <span className="text-xl md:text-2xl font-bold text-gradient leading-none">GovLink</span>
+              <span className="text-xs text-muted-foreground/70 font-medium leading-none">Sri Lanka</span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            <button onClick={() => smoothScrollTo('services')} className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-              Services
+          <div className="hidden md:flex items-center gap-1">
+            <button onClick={() => smoothScrollTo('services')} className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent/50 rounded-lg transition-all duration-300 relative group">
+              <span className="relative z-10">Services</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#FFC72C]/0 to-[#FF5722]/0 group-hover:from-[#FFC72C]/5 group-hover:to-[#FF5722]/5 rounded-lg transition-all duration-300"></div>
             </button>
-            <button onClick={() => smoothScrollTo('about')} className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-              About
+            <button onClick={() => smoothScrollTo('about')} className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent/50 rounded-lg transition-all duration-300 relative group">
+              <span className="relative z-10">About</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#FFC72C]/0 to-[#FF5722]/0 group-hover:from-[#FFC72C]/5 group-hover:to-[#FF5722]/5 rounded-lg transition-all duration-300"></div>
             </button>
-            <button onClick={() => smoothScrollTo('contact')} className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-              Contact
+            <button onClick={() => smoothScrollTo('contact')} className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent/50 rounded-lg transition-all duration-300 relative group">
+              <span className="relative z-10">Contact</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#FFC72C]/0 to-[#FF5722]/0 group-hover:from-[#FFC72C]/5 group-hover:to-[#FF5722]/5 rounded-lg transition-all duration-300"></div>
             </button>
           </div>
 
-          <div className="hidden md:flex items-center gap-4">
-            <Link href="/chat" className="bg-gradient-to-r from-[#FFC72C] to-[#FF5722] hover:from-[#FF5722] hover:to-[#8D153A] text-white px-6 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300 shadow-lg hover:shadow-xl">
-              Start Chat
+          <div className="hidden md:flex items-center gap-3">
+            <Link href="/chat" className="bg-gradient-to-r from-[#FFC72C] via-[#FF5722] to-[#8D153A] hover:from-[#FF5722] hover:via-[#8D153A] hover:to-[#FFC72C] text-white px-6 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 relative overflow-hidden group">
+              <span className="relative z-10">Start Chat</span>
+              <div className="absolute inset-0 bg-white/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-12"></div>
             </Link>
+            <div className="w-px h-6 bg-border/50"></div>
             <ThemeToggle />
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex items-center gap-4 md:hidden">
+          <div className="flex items-center gap-3 md:hidden">
             <ThemeToggle />
-            <button onClick={toggleMobileMenu} className="p-2 hover:bg-accent rounded-lg transition-colors">
+            <button onClick={toggleMobileMenu} className="p-2.5 hover:bg-accent/70 rounded-xl transition-all duration-300 hover:scale-105 border border-border/30">
               <Menu className="h-5 w-5" />
               <span className="sr-only">Open menu</span>
             </button>
@@ -115,33 +123,37 @@ export const Header = () => {
             animate="visible"
             exit="exit"
             variants={mobileMenuVariants}
-            className="fixed inset-x-0 top-0 z-50 origin-top bg-background/98 backdrop-blur-md p-6 md:hidden border-b border-border"
+            className="fixed inset-x-0 top-0 z-50 origin-top bg-background/98 dark:bg-card backdrop-blur-md p-6 md:hidden border-b border-border/30 dark:border-border/50 shadow-lg dark:shadow-xl"
           >
-            <div className="flex items-center justify-between mb-6">
-              <Link href="/" className="flex items-center space-x-3">
-                <div className="w-8 h-8 bg-gradient-to-br from-background/50 to-card/50 rounded-lg p-0.5 flex items-center justify-center border border-border/20 relative overflow-visible">
-                  <NavbarLotusIcon className="w-10 h-10 absolute" />
+            <div className="flex items-center justify-between mb-8">
+              <Link href="/" className="flex items-center space-x-3 group">
+                <div className="w-9 h-9 bg-gradient-to-br from-[#FFC72C]/10 to-[#FF5722]/10 rounded-xl p-0.5 flex items-center justify-center border border-[#FFC72C]/20 relative overflow-visible backdrop-blur-sm transition-all duration-300 group-hover:shadow-lg group-hover:scale-105">
+                  <NavbarLotusIcon className="w-11 h-11 absolute transition-transform duration-300 group-hover:rotate-12" />
                 </div>
-                <span className="text-2xl font-bold text-gradient">GovLink</span>
+                <div className="flex flex-col">
+                  <span className="text-2xl font-bold text-gradient leading-none">GovLink</span>
+                  <span className="text-xs text-muted-foreground/70 font-medium leading-none">Sri Lanka</span>
+                </div>
               </Link>
-              <button onClick={toggleMobileMenu} className="p-2 hover:bg-accent rounded-lg transition-colors">
+              <button onClick={toggleMobileMenu} className="p-2.5 hover:bg-accent/70 rounded-xl transition-all duration-300 hover:scale-105 border border-border/30">
                  <X className="h-5 w-5" />
                  <span className="sr-only">Close menu</span>
               </button>
             </div>
-            <div className="space-y-4">
-              <button onClick={() => smoothScrollTo('services')} className="block w-full text-left px-4 py-3 text-base font-medium text-foreground hover:bg-accent rounded-lg transition-colors">
+            <div className="space-y-3">
+              <button onClick={() => smoothScrollTo('services')} className="block w-full text-left px-5 py-3.5 text-base font-medium text-foreground hover:bg-accent/70 rounded-xl transition-all duration-300 hover:translate-x-1 border border-transparent hover:border-border/30">
                 Services
               </button>
-              <button onClick={() => smoothScrollTo('about')} className="block w-full text-left px-4 py-3 text-base font-medium text-foreground hover:bg-accent rounded-lg transition-colors">
+              <button onClick={() => smoothScrollTo('about')} className="block w-full text-left px-5 py-3.5 text-base font-medium text-foreground hover:bg-accent/70 rounded-xl transition-all duration-300 hover:translate-x-1 border border-transparent hover:border-border/30">
                 About
               </button>
-              <button onClick={() => smoothScrollTo('contact')} className="block w-full text-left px-4 py-3 text-base font-medium text-foreground hover:bg-accent rounded-lg transition-colors">
+              <button onClick={() => smoothScrollTo('contact')} className="block w-full text-left px-5 py-3.5 text-base font-medium text-foreground hover:bg-accent/70 rounded-xl transition-all duration-300 hover:translate-x-1 border border-transparent hover:border-border/30">
                 Contact
               </button>
-              <div className="pt-4 border-t border-border">
-                 <Link href="/chat" className="block w-full text-center bg-gradient-to-r from-[#FFC72C] to-[#FF5722] hover:from-[#FF5722] hover:to-[#8D153A] text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300">
-                    Start Chat
+              <div className="pt-6 border-t border-border/50">
+                 <Link href="/chat" className="block w-full text-center bg-gradient-to-r from-[#FFC72C] via-[#FF5722] to-[#8D153A] hover:from-[#FF5722] hover:via-[#8D153A] hover:to-[#FFC72C] text-white px-6 py-3.5 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 relative overflow-hidden group">
+                    <span className="relative z-10">Start Chat</span>
+                    <div className="absolute inset-0 bg-white/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-12"></div>
                  </Link>
               </div>
             </div>
